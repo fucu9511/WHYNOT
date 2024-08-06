@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.dialog.show {
+    display: block;
+    opacity: 1;
+}
+
+.dialog p {
+    margin-bottom: 20px;
+}
+
+.dialog button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.dialog button:hover {
+    transform: scale(1.05);
+}
+
+.dialog button:first-child {
+    background-color: #007BFF;
+    color: white;
+}
+
+.dialog button:last-child {
+    background-color: #6c757d;
+    color: white;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+#message {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+    display: none;
+    margin-top: 10px;
+}
